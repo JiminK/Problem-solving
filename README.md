@@ -1,7 +1,5 @@
-# myRepo
+# Repository Description
 
-
-### Repository Description
 **1. Upload BOJ code step by step.**
 > 1 - 1. 구현
 > 1 - 2. 브루트 포스 (Brute Force)
