@@ -3,7 +3,7 @@
 **1. Upload BOJ code step by step.**
 > 1 - 1. 구현  
 > 1 - 2. 수학  
-> 1 - 3. 브루트 포스 (Brute Force) 
+> 1 - 3. 브루트 포스 (Brute Force)     
 > 1 - 4.      
 
 **2. Try to make my own project.**
