@@ -1,12 +1,15 @@
 ## Repository Description
 
 **1. Upload BOJ code step by step.**
-> 1 - 1. 구현  
-> 1 - 2. 수학  
-> 1 - 3. 브루트 포스 (Brute Force)     
-> 1 - 4.      
+> 1) 단계별 코드 업로드     
+>     - 1단계. 입출력과 사칙연산      
+> 2) 알고리즘별 코드 업로드
+>     - 구현    
+>     - 수학     
+>     - 브루트 포스 (Brute Force)     
+>       
 
 **2. Try to make my own project.**
-> 2 - 1. 
+> 2 - 1.      
 
 **3.**
