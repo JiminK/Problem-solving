@@ -15,6 +15,6 @@
 >     -     
 
 **2. Try to make my own project.**
-> 2 - 1.      
+>              
 
 **3.**
