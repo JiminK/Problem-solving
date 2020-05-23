@@ -12,8 +12,7 @@
 >     - 8단계.     
 > 2) 알고리즘별 코드 업로드
 >     - 구현    
->     - 수학     
->     - 브루트 포스 (Brute Force)     
+>     - 수학         
 >     -     
 
 **2. Try to make my own project.**
