@@ -19,5 +19,3 @@
 
 **2. Try to make my own project.**
 >              
-
-**3.**
