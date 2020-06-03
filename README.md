@@ -1,4 +1,4 @@
-## "MyRepo" Repository Description
+## "**MyRepo**" Repository Description
 
 **1. Upload BOJ code step by step.**
 > 1) 단계별 코드 업로드     
