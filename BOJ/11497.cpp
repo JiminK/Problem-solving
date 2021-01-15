@@ -11,7 +11,7 @@ int main() {
 		for (int j = 0; j < n; j++) {
 			cin >> li[j];
 		}
-		// ¿À¸§Â÷¼ø Á¤·Ä
+		// ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 		sort(li, li + n);
 		int result = 0;
 		for (int k = 0; k < n - 2; k++) {
