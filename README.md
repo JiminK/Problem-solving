@@ -1,6 +1,6 @@
 ## "MyRepo" Repository Description
 
-**1. Upload BOJ code step by step.**
+**1. Upload BOJ solution.**
 > 1) 단계별 코드 업로드     
 >     - 1단계. 입출력과 사칙연산    
 >     - 2단계. if문      
