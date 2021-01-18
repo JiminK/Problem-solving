@@ -5,20 +5,20 @@
 using namespace std;
 
 int n = 0;
-int s[21][21];
+int s[21][21]; // ë²¡í„°ë¡œ í–ˆì„ ë•Œ ìê¾¸ out of range ì—ëŸ¬ ëœ¨ëŠ” ì´ìœ ê°€ ë­˜ê¹Œ..?
 bool check[21];
 int minR = INT_MAX;
 
-/* recursive call »ç¿ë */
+/* recursive call ì‚¬ìš© */
 void calc(int idx, int cnt) {
-    /* n / 2 ¸í check[] true·Î ¸¸µé¾úÀ» ¶§ */
+    /* n / 2 ëª… check[] trueë¡œ ë§Œë“¤ì—ˆì„ ë•Œ */
 	if (cnt == n / 2) {
 		/* 
-		   startÆÀ, linkÆÀ ³ª´©±â
-		   check[] == trueÀÎ idx => start team
-		   check[] == falseÀÎ idx => link team
+		   startíŒ€, linkíŒ€ ë‚˜ëˆ„ê¸°
+		   check[] == trueì¸ idx => start team
+		   check[] == falseì¸ idx => link team
 		*/
-		vector<int> start, link; // °è¼Ó ÃÊ±âÈ­ ÇØÁà¾ß ÇÔ.
+		vector<int> start, link; // ê³„ì† ì´ˆê¸°í™” í•´ì¤˜ì•¼ í•¨.
 		for (int i = 0; i < n; i++) {
 			if (check[i] == true)
 				start.push_back(i);
@@ -26,7 +26,7 @@ void calc(int idx, int cnt) {
 				link.push_back(i);
 		}
 
-		/* ´É·ÂÄ¡ Â÷ÀÌ °è»ê */
+		/* ëŠ¥ë ¥ì¹˜ ì°¨ì´ ê³„ì‚° */
 		int start_stat = 0, link_stat = 0;
 		for (int i = 0; i < n / 2; i++) {
 			for (int j = i + 1; j < n / 2; j++) {
