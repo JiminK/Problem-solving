@@ -1,4 +1,4 @@
-## "MyRepo" Repository Description
+## "BOJ-Solving" Repository Description
 
 **1. Upload BOJ solution.**
 > 1) 단계별 코드 업로드     
