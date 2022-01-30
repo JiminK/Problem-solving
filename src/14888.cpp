@@ -7,9 +7,9 @@ int N;
 int arr[11] = { 0 };
 int maxR = INT_MIN, minR = INT_MAX;
 
-// recursive call 사용
+// recursive call
 void calc(int add, int subt, int mult, int div, int cnt, int result) {
-    // 종료 조건
+    // return 
     if (cnt == N - 1) {
         maxR = max(maxR, result);
         minR = min(minR, result);
