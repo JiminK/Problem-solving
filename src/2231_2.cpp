@@ -7,22 +7,22 @@ int main() {
 
     int n; cin >> n;
 
-    for (int i = n; i > 0; --i) {
-        int tempN = i;
-        int tempNSum = 0;
-
-        while (tempN != 0) {
-            int tmp = tempN % 10;
-            tempNSum += tmp;
-            tempN /= 10;
+    for (int i = 0; i < n; ++i) {
+        int tmpN = i;
+        int tmpSum = 0, sum = 0;
+        while (tmpN != 0) {
+            int tmp = tmpN % 10;
+            tmpSum += tmp;
+            tmpN /= 10;
         }
-        
-        cout << "tempNSum : " << tempNSum << "\n";
-        i += tempNSum;
-        cout << "i : " << i << "\n";
-
+        // cout << "tmpSum : " << tmpSum << "\n";
+        sum = i + tmpSum;
+        // cout << "sum : " << sum << "\n";
+        if (sum == n) {
+            cout << i << "\n";
+            return 0;
+        }
     }
-
-
+    cout << 0 << "\n";
     return 0;
 }
