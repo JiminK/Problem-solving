@@ -18,12 +18,15 @@ int main() {
     }
 
     int minPrice, x, y, z;
+    /* case 1: buy only package string */
     if (n % 6 == 0) {
         x = (n / 6) * minPack;   
     } else {
         x = (n / 6 + 1) * minPack;
     }
+    /* case 2: buy package string as much as possible and then buy single one */
     y = (n / 6) * minPack + (n % 6) * minOne;
+    /* case 3: buy only single string */
     z = n * minOne;
     // cout << x << " " << y << " " << z << "\n";
 
