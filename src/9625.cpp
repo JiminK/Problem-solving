@@ -46,6 +46,5 @@ int main() {
         k--;
     }
     countAB(str);
-
     return 0;
 }
