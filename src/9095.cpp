@@ -3,22 +3,22 @@
 
 using namespace std;
 
-vector<int> dp;
-
-int dpFunc(int n) {
-    if (n == 1) 
-
-    return dp[n];
-}
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int t, n; cin >> t >> n;
+    int t; cin >> t;
     for (int i = 0; i < t; ++i) {
-        
-        cout << dpFunc(n) << "\n";
+        int n; cin >> n;
+        vector<int> dp(n + 1);
+        dp[0] = 0;
+        dp[1] = 1;
+        dp[2] = 2;
+        dp[3] = 4;
+        for (int i = 4; i <= n; ++i) {
+            dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
+        }
+        cout << dp[n] << "\n";
     }
     return 0;
 }
