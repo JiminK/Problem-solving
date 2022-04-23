@@ -10,6 +10,7 @@ int tempG[MAX_N + 1][MAX_N + 1];
 int dir[4][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}; // r, d, l, u
 bool visited[MAX_N + 1][MAX_N + 1];
 
+// 
 void initVisited() {
     for (int r = 0; r < N; ++r) {
         for (int c = 0; c < M; ++c) {
@@ -144,8 +145,8 @@ int solve() {
 }
 
 int main() {
-    // ios::sync_with_stdio(false);
-    // cin.tie(0);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
 
     solve();
 
