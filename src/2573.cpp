@@ -115,12 +115,17 @@ int solve() {
     getInput();
 
     int cntYear = 0;
+    /*  
+        2 덩어리 이상인지 체크하는 함수
+        입력부터 모두 0일 수도 있으니 ①맨처음 ②melt() 후, 총 2번 체크한다.
+    */
     if (checkMoreThan2()) {
         cout << cntYear << "\n";
         return 0;
     };
+    /* checkMoreThan2()에서 visited 함수 사용해서 초기화 해줘야 한다. */
     initVisited();
-
+    
     if (checkAllMelted()) {
         cout << 0; 
         return 0;
