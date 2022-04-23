@@ -20,7 +20,7 @@ struct strt {
     }
 };
 
-void bfs() {
+int bfs() {
     priority_queue <strt> q;
     // 처음 위치 push
     q.push({N, 0});
@@ -30,25 +30,11 @@ void bfs() {
         strt curr = q.top(); q.pop();
         // cout << "curr.pos : " << curr.pos << "\n";
         if (curr.pos == K) {
-            cout << curr.cost << "\n";
-            return;
+            return curr.cost;
         }
 
         if (visited[curr.pos]) continue;
         visited[curr.pos] = true;
-        
-        // if (curr.pos <= 0) {
-        //     q.push({curr.pos + 1, curr.cost + 1});
-        //     continue;
-        // }
-        // if (curr.pos > K/2 + 1) {
-        //     q.push({curr.pos + 1, curr.cost + 1});
-        //     q.push({curr.pos - 1, curr.cost + 1});
-        // } else {
-        //     q.push({curr.pos + 1, curr.cost + 1});
-        //     q.push({curr.pos - 1, curr.cost + 1});
-        //     q.push({curr.pos * 2, curr.cost});
-        // } 
 
         if (curr.pos * 2 <= MAX_N) {
             // cout << "111111111\n";
@@ -66,12 +52,20 @@ void bfs() {
     }
 }
 
+void getInput() {
+    cin >> N >> K;
+}
+
+void solve() {
+    getInput();
+    cout << bfs() << "\n";
+}
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    cin >> N >> K;
-    bfs();
+    solve();
 
     return 0;
 }
