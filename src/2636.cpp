@@ -46,7 +46,9 @@ void zero2two() { // bfs
     G[0][0] = 2; 
     q.push({0, 0}); 
     while (!q.empty()) {
-        int r = q.front().r, c = q.front().c;
+        strt curr = q.front();
+        int r = curr.r, c = curr.c;
+        // int r = q.front().r, c = q.front().c;
         q.pop();
         // if (G[r][c] != 2) continue;
         for (int i = 0; i < 4; ++i) {
