@@ -30,6 +30,7 @@ int main() {
         cout << vec[i] << " ";
     }
     cout << "\n";
+    
     // for (auto iter = vec.begin(); iter != vec.end(); iter += N/K){
     //     sort(iter, iter + N/K);
     // }
