@@ -1,46 +1,46 @@
 #include <iostream>
-#include <unordered_set>
 
 using namespace std;
 
 int M;
 string cmd;
 int num;
-unordered_set<int> mySet;
+int arr[21];
 
 void solve() {
     if (cmd == "add") {
-        mySet.insert(num);
+        arr[num] = 1;
     }
     if (cmd == "remove") {
-        mySet.erase(num);
+        arr[num] = 0;
     }
     if (cmd == "check") {
-        cout << mySet.count(num) << "\n";
+        cout << arr[num] << "\n";
     }
     if (cmd == "toggle") {
-        if (mySet.count(num)) mySet.erase(num);
-        else mySet.insert(num);
+        if (arr[num]) arr[num] = 0;
+        else arr[num] = 1;
     }
     if (cmd == "all") {
-        mySet.clear();
         for (int i=1; i<=20; ++i) {
-            mySet.insert(i);
+            arr[i] = 1;
         }
     }
     if (cmd == "empty") {
-        mySet.clear();
+        for (int i=1; i<=20; ++i) {
+            arr[i] = 0;
+        }
     }
 }
 
-void printSet() {
-    cout << "\n============\n";
-    for (auto iter=mySet.begin(); iter!=mySet.end(); ++iter) {
-        // int curr = *iter;
-        cout << (*iter) << " ";
-    }
-    cout << "\n============\n";
-}
+// void printSet() {
+//     cout << "\n============\n";
+//     for (auto iter=mySet.begin(); iter!=mySet.end(); ++iter) {
+//         // int curr = *iter;
+//         cout << (*iter) << " ";
+//     }
+//     cout << "\n============\n";
+// }
 
 void getInput() {
     cin >> M;
