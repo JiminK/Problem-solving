@@ -12,34 +12,34 @@ int dir[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 bool visited[26][26];
 int danjiNum;
 
-int dfs(int r, int c, int cnt) {
-    if (visited[r][c]) return 0;
+void dfs(int r, int c) {
+    if (visited[r][c]) return;
     visited[r][c] = 1;
     for (int i=0; i<4; ++i) {
         int nextR = r + dir[i][0], nextC = c + dir[i][1];
         if (nextR < 0 || nextC < 0 || nextR >= N || nextC >= N) continue;
         if (map[nextR][nextC] == 0) continue;
         if (visited[nextR][nextC]) continue;
-        // cout << "cnt : " << cnt << "\n";
-        // danjiNum += dfs(nextR, nextC, cnt+1);
-        cnt = dfs(nextR, nextC, cnt+1);
+        dfs(nextR, nextC);
+        danjiNum++;
     }
-    return cnt;
 }
 
 void init() {
-    for (int i=0; i<N; ++i) {
-        for (int j=0; j<N; ++j) {
-            visited[i][j] = 0;
-        }
-    }
+    // for (int i=0; i<N; ++i) {
+    //     for (int j=0; j<N; ++j) {
+    //         visited[i][j] = 0;
+    //     }
+    // }
+    danjiNum = 0;
 }
 
 void solve() {
     for (int r=0; r<N; ++r) {
         for (int c=0; c<N; ++c) {
+            init();
             if (map[r][c] == 0 || visited[r][c] == 1) continue;
-            danjiNum = dfs(r, c, 0);
+            dfs(r, c);
             // cout << "final cnt >>>>>>>> " << danjiNum+1 << "\n";
             danji.push_back(danjiNum+1);
         }   
