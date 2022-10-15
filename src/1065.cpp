@@ -26,9 +26,11 @@ int main() {
 
     cin >> N;
 
+    // N 이 한 자리 또는 두 자리 수 
     if (N < 100) {
         cnt = N;
     }
+    // N 이 세 자리 수 
     else if (N >= 100) {
         cnt += 99;
         for (int i=100; i<=N; ++i) {
