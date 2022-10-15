@@ -5,35 +5,32 @@
 using namespace std;
 
 int N, M;
-vector<int> num, v;
-bool check[10001];
+vector<int> v;
 
-void dfs(int idx, int cnt) {
-    if (cnt > M) {
-        for (int i=0; i<v.size(); ++i)
-            cout << v[i] << " ";
+void dfs(vector<int> c, int r, int depth, int idx) {
+    if (r == 0) {
+        for (int i=0; i<c.size(); ++i)
+            cout << c[i] << " ";
         cout << "\n";
-        return;
+    }
+    else if (depth == v.size()) return;
+    else {
+        c[idx] = v[depth];
+        // 선택 o
+        dfs(c, r-1, depth+1, idx+1);
+        // 선택 x
+        dfs(c, r, depth+1, idx);
     }
     
-    for (int i=0; i<num.size(); ++i) {
-        // if (check[num[i]]) continue;
-        // check[num[i]] = true;
-        v.push_back(num[i]);
-        dfs(num[i], cnt+1);
-        v.pop_back();
-        // check[num[i]] = false;
-    }
 }
 
 void getInput() {
-    cin >> N >> M;
-    for (int i=0; i<N; ++i) {
-        int temp; cin >> temp;
-        num.push_back(temp);
-    }
-    sort(num.begin(), num.end());
-    dfs(num[0], 1);
+   cin >> N >> M;
+   for (int i=0; i<N; ++i) {
+       int temp; cin >> temp;
+       v.push_back(temp);
+   }
+   sort(v.begin(), v.end());
 }
 
 int main() {
@@ -41,6 +38,8 @@ int main() {
     cin.tie(0);
 
     getInput();
+    vector<int> c(M);
+    dfs(c, M, 0, 0);
 
     return 0;
 }

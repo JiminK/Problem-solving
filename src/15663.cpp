@@ -6,6 +6,7 @@ using namespace std;
 
 int N, M;
 vector<int> num, v;
+bool check[9];
 
 void dfs(int idx, int cnt) {
     if (cnt > M) {
@@ -16,6 +17,9 @@ void dfs(int idx, int cnt) {
     }
     
     for (int i=idx; i<num.size(); ++i) {
+        if (check[i]) continue;
+        check[i] = true;
+        if (v.back() == num[i]) continue;
         v.push_back(num[i]);
         dfs(i, cnt+1);
         v.pop_back();
@@ -36,7 +40,8 @@ int main() {
 
     getInput();
     sort(num.begin(), num.end());
-    dfs(0, 1);
+    v.push_back(num[0]); check[0] = true;
+    dfs(0, 2);
 
     return 0;
 }

@@ -24,8 +24,11 @@ void getInput() {
 }
 
 bool comp(const strt &a, const strt &b) {
+    // 국어 점수가 감소하는 순
     if (a.kor == b.kor) {
+        // 국어 점수가 같으면, 영어 점수가 증가하는 순
         if (a.eng == b.eng) {
+            // 국어, 영어 점수가 같으면, 수학 점수가 감소하는 순 
             if (a.math == b.math) {
                 return a.name < b.name;
             }
