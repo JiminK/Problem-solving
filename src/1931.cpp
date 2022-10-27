@@ -1,35 +1,48 @@
-#include<vector>
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
-bool cmp(const vector<int>& v1, const vector<int>& v2)
-{
-    if (v1[1] == v2[1]) // E 같다 => S 작은 순서로 정렬
-        return v1[0] < v2[0];
-    else // E 다르다 => E 작은 순서로 정렬
-        return v1[1] < v2[1];
+int N, ans = 1;
+struct strt {
+    int st, et;
+};
+vector<strt> vec;
+
+bool cmp(const strt& s1, const strt& s2) {
+    if (s1.et == s2.et) return s1.st < s2.st;
+    else return s1.et < s2.et;
 }
 
-int main()
-{
-    int N = 0, answer = 1;
-    cin >> N;
-    vector<vector<int>> arr(N, vector<int>(2,0));
-    for (int i = 0; i < N; i++) {
-        cin >> arr[i][0] >> arr[i][1];
-    }
-    int n = arr.size();
+void solve() {
+     sort(vec.begin(), vec.end(), cmp);
 
-    sort(arr.begin(), arr.end(), cmp);
-
-    int end_time = arr[0][1]; // 회의가 끝나는 시각 저장
-    for (int i = 1; i < n; i++) {
-        if (end_time <= arr[i][0]) { // 현재 회의의 끝나는 시각이 다음 회의 시작 시각보다 빠르면 다음 팀이 회의 가능하므로
-            end_time = arr[i][1]; // 다음 회의의 끝나는 시간을 저장
-            answer++;
+    int endTime = vec[0].et;
+    for (int i=1; i<vec.size(); ++i) {
+        if (endTime <= vec[i].st) { 
+            endTime = vec[i].et; 
+            ans++;
         }
     }
-    cout << answer << endl;
+}
+
+void getInput() {
+    cin >> N;
+    for (int i=0; i<N; ++i) {
+        int a, b; cin >> a >> b;
+        vec.push_back({a, b});
+    }
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
+    getInput();
+    solve();
+
+    cout << ans << "\n";
+
     return 0;
 }
