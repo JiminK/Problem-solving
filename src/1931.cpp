@@ -16,7 +16,7 @@ bool cmp(const strt& s1, const strt& s2) {
 }
 
 void solve() {
-     sort(vec.begin(), vec.end(), cmp);
+    sort(vec.begin(), vec.end(), cmp);
 
     int endTime = vec[0].et;
     for (int i=1; i<vec.size(); ++i) {
